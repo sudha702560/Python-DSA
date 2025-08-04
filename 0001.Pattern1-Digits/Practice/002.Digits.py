@@ -125,3 +125,25 @@ def frequency_count(n, k):
     return count
 
 print("Frequency of 2 in 12324562:", frequency_count(12324562, 2))
+
+
+
+"""
+# range (start , ending , step)
+
+# Single Value is always the end value
+# Will go up to 9 , end is always excluded
+# Start value by default is zero
+for i in range(10):
+    print(i, end=" ")
+
+print() 
+# Starting at 2 
+for i in range(2,10):
+    print(i, end=" ")
+print()
+# By defaut step is 1
+for i in range(2,10,2):
+    print(i, end=" ")
+
+"""
