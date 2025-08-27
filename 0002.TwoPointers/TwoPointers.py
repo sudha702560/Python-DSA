@@ -5,7 +5,7 @@
 |                                                               |
  ---------------------------------------------------------------
 
-1. Reverse String  
+1. everse StringR  
    - LeetCode Link: [Reverse String](https://leetcode.com/problems/reverse-string/)  
    - Example: Input: "hello" → Output: "olleh"
 
