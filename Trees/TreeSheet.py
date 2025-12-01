@@ -8,13 +8,12 @@
 # Topic: Node design
 # Practice: Just write the class
 
-"""
+
 class Node:
     def __init__(self,value):
         self.value = value
         self.left = None 
         self.right = None 
-"""
 
 
 # 2. Manually Construct a Binary Tree
@@ -196,21 +195,112 @@ print(level_order(root))
 
 # 7. Count Nodes
 # https://leetcode.com/problems/count-complete-tree-nodes/ (normal O(n) version first)
+"""
 
+def count_nodes(root):
+    if not root:
+        return 0 
+    return 1 + count_nodes(root.left) + count_nodes(root.right)
+"""
+
+# root = Node(1)
+# # print(root.value)
+# root.left = Node(3)
+# root.right = Node(5)
+# # root.left.left =Node(2)
+# root.left.right =Node(6)
+# # root.right.left =Node(22)
+# root.right.right =Node(30)
+
+# print(count_nodes(root))
 # 8. Height of Binary Tree
 # https://leetcode.com/problems/maximum-depth-of-binary-tree/
+"""
+def height(root):
+    if not root:
+        return 0 
+    return 1 + max(height(root.left), height(root.right))
+"""
 
 # 9. Count Leaf / Full Nodes
 # Practice on any tree
+"""
+def count_all_nodes(root):
+    if not root:
+        return 0
+    if root.left and root.right:
+        return 1 + count_all_nodes(root.left) + count_all_nodes(root.right)
+    return count_all_nodes(root.left) + count_all_nodes(root.right)
+"""
 
+"""
+def Count_leaves(root):
+    if not root:
+        return 0 
+    if not root.left and not root.right:
+        return 1 
+    return Count_leaves(root.left) + Count_leaves(root.right)
+"""
 # 10. Sum of Leaf Nodes
 # Practice on any tree
+
+"""
+def Count_leaves(root):
+    if not root:
+        return 0 
+    if not root.left and not root.right:
+        return root.value
+    return Count_leaves(root.left) + Count_leaves(root.right)
+"""
+
 
 # 11. Print All Root to Leaf Paths
 # https://leetcode.com/problems/binary-tree-paths/
 
+"""
+def path_to_leaf_nodes(root):
+    if not root:
+        return []
+    result = []
+
+    def dfs(node, path):
+        path.append(str(node.value))
+        if not node.left and not node.left:
+            result.append("->".join(path))
+        if node.left:
+            dfs(node.left,path)
+        if node.right:
+            dfs(node.right, path)
+        path.pop()
+    dfs(root,[])
+
+    return result 
+root = Node(1)
+# print(root.value)
+root.left = Node(3)
+root.right = Node(5)
+# root.left.left =Node(2)
+root.left.right =Node(6)
+# root.right.left =Node(22)
+root.right.right =Node(30)
+
+print(path_to_leaf_nodes(root))
+"""
 # 12. Maximum Root to Leaf Path Sum
 # https://leetcode.com/problems/binary-tree-maximum-path-sum/ (simplified version)
+
+"""
+def max_path_sum(root):
+    if not root:
+        return 0 
+    if not root.left and not root.right :
+        return root.value
+    
+    left = max_path_sum(root.left) if root.left else float('-inf')
+    right = max_path_sum(root.right) if root.right else float('-inf')
+    
+    return root.value + max(left , right)
+"""
 
 # =============================================================================
 # SECTION 2: BEGINNER BST
