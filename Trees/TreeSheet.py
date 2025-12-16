@@ -309,8 +309,35 @@ def max_path_sum(root):
 # 13. Insert into BST
 # https://leetcode.com/problems/insert-into-a-binary-search-tree/
 
+"""
+class Solution(object):
+    def insertIntoBST(self, root, val):
+        if not root:
+            return TreeNode(val)
+        
+        if val < root.val:
+            root.left = self.insertIntoBST(root.left,val)
+        else:
+            root.right = self.insertIntoBST(root.right, val)
+        
+        return root
+"""
+
 # 14. Search in BST
 # https://leetcode.com/problems/search-in-a-binary-search-tree/
+"""
+class Solution(object):
+    def searchBST(self, root, val):
+        while root:
+            if val < root.val:
+                root = root.left
+            elif val > root.val:
+                root = root.right
+            else:
+                return root 
+        return None
+
+"""
 
 # 15. Min & Max in BST
 # https://leetcode.com/problems/minimum-absolute-difference-in-bst/ (use min/max logic)
@@ -318,8 +345,17 @@ def max_path_sum(root):
 # 16. Sorted Array to Balanced BST
 # https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
 
+# 1 4 7 9 10 14 30
+
+#       9 
+#    4    14
+#  1   7 10 30 
+#             45
+
 # 17. Validate Binary Search Tree
 # https://leetcode.com/problems/validate-binary-search-tree/
+
+
 
 # 18. Kth Smallest Element in BST
 # https://leetcode.com/problems/kth-smallest-element-in-a-bst/
